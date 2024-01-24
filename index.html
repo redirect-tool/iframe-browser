@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe Browser</title>
+</head>
+<body>
+  <h1>Iframe Browser</h1>
+  <h3>Remember to add the http:// or https:// to the start of the url</h3>
+  
+  <label for="urlInput">Enter URL:</label>
+  <input type="text" id="urlInput" placeholder="https://www.example.com">
+  <button onclick="loadURL()">Go</button>
+
+  <iframe id="contentIframe" title="Iframe Content"></iframe>
+
+  <script>
+    function loadURL() {
+      var url = document.getElementById('urlInput').value;
+      document.getElementById('contentIframe').src = url;
+    }
+
+    document.getElementById('urlInput').addEventListener('keyup', function(event) {
+      if (event.key === 'Enter') {
+        loadURL();
+      }
+    });
+  </script>
+</body>
+</html>
